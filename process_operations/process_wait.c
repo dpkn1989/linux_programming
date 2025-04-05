@@ -22,7 +22,7 @@ int main(int argc, char * argv[])
         printf("PARENT: Creating another child process.\n");
 
         child2pid = fork();
-        if(child1pid == -1)
+        if(child2pid == -1)
         {
             printf("PARENT: Child2 cannot be created. Fork failed.\n");
             exit(-1);

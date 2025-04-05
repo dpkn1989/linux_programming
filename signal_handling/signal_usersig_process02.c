@@ -25,7 +25,7 @@ int main(void)
     
     printf("Child process sending SIGUSR1 to Parent process.\n");
     kill(getppid(),SIGUSR1);
-    printf("Child process about to terminated.\n");
+    printf("Child process about to get terminated.\n");
     
     return 5;
 }

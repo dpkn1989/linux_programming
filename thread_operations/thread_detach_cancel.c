@@ -7,14 +7,13 @@ void* run_loop(void *ch)
 {
     char* arg = (char*)ch;
     printf("I'm in the thread now with argument <%s> and pid: %d.\n\n",arg,getpid());
+    pthread_detach(pthread_self());
     for(int i = 1; i<=5; i++)
     {
         printf("The loop is running at count: %d\n",i);
         sleep(1);
     }
     printf("\nI'm exiting the thread now.\n");
-    
-    return (void*)"Thread successfully executed!";
 }
 
 int main(int argc, char* argv[])
@@ -31,12 +30,9 @@ int main(int argc, char* argv[])
         exit(-1);
     }
     // sleep(6);
-    // printf("Parent thread is exiting now.\n");
-
-    // pthread_exit(0);   // Makes main thread exit without stopping the child threads. Otherwise, sleep(6); instruction has to be used to wait for child thread to
-                          // finish its execution.
-    result2 = pthread_join(tid,&returnValue);   // This is a blocked call, which means main thread is blocked until the child thread completes it's execution.
-    printf("Parent thread is exiting now with the return value from thread: <%s>.\n",(char*)returnValue);
+    printf("Parent thread is exiting now.\n");
+    // pthread_cancel(tid);  //Used to intentionally terminate a thread. 
+    pthread_exit(0);
      
-    return 0;
+    // return 0;
 }
