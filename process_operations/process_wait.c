@@ -43,7 +43,7 @@ int main(int argc, char * argv[])
         }
 
         wait(&status1);
-        // waitpid(child2pid,&status2,WNOHANG);
+        // waitpid(child1pid,&status1,WNOHANG);
         printf("PARENT: Child1 exited with status: %d\n", status1);
     }
     else if(child1pid == 0)

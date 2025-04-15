@@ -60,7 +60,7 @@ int main(void)
             printf("Data of size %ld bytes written succefssfully to the file.\n", sizewrite);
             printf("Do you want to continue writing? Enter 0 to STOP or 1 to CONTINUE\n");
             scanf("%d", &continueWrite);
-            getchar();
+            getchar();       // This is to consume the newline character that comes up by pressing ENTER after providing value for continuewrite from console
         }
         else if(sizewrite == -1)
         {

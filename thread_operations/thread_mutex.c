@@ -40,7 +40,7 @@ int main(int argc, char* argv[])
     }
     
     result2 = pthread_create(&tid2,NULL,increment_global,"SriRam!");
-    if(result1 != 0)
+    if(result2 != 0)
     {
         perror("Error crearing a thread2.\n");
         exit(-1);
