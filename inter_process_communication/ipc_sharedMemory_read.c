@@ -12,14 +12,14 @@ int main(int argc, char *argv[])
 {
     int fd;
     char *addr;
-    struct stat len;
+    struct stat len;                          // Struct used to store metadata of shared mem
     fd = shm_open("/shm_1", O_RDONLY, 0);
     if (fd == -1)
     {
         printf("\n shm open error\n");
         return -1;
     }
-    fstat(fd, &len);
+    fstat(fd, &len);                          // Shared mem info stored to 'len'. len.st_size says how big the shared mem object is
     addr = mmap(NULL, len.st_size, PROT_READ, MAP_SHARED, fd, 0);
     if (addr == MAP_FAILED)
     {

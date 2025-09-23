@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 
   printf("\n shm open success\n");
   len = strlen(argv[1]);
-  if (ftruncate(fd, len) == -1){
+  if (ftruncate(fd, len) == -1){                   // Truncate fd to length 'len'
       perror("ftruncate");
       exit(-1);
   }

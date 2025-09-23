@@ -19,9 +19,9 @@ int main(void)
 {
     printf("The pid of Parent process is: %d\n", getpid());
     signal(SIGINT,Signal_Handler);
-    //signal(SIGTERM,Signal_Handler);
+    signal(SIGTERM,Signal_Handler);
     //signal(SIGTERM,SIG_IGN);
-    signal(SIGTERM,SIG_DFL);
+    //signal(SIGTERM,SIG_DFL);
 
     while(1);
     

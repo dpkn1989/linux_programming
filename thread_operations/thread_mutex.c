@@ -35,14 +35,14 @@ int main(int argc, char* argv[])
     result1 = pthread_create(&tid1,NULL,increment_global,"SitaRam!");
     if(result1 != 0)
     {
-        perror("Error crearing a thread1.\n");
+        perror("Error creating thread1.\n");
         exit(-1);
     }
     
     result2 = pthread_create(&tid2,NULL,increment_global,"SriRam!");
     if(result2 != 0)
     {
-        perror("Error crearing a thread2.\n");
+        perror("Error crearing thread2.\n");
         exit(-1);
     }
 

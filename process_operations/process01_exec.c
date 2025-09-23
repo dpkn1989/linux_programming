@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
     if(chpid == 0)
     {
         printf("I'm in Child process and my pid is: %d.\n",getpid());
-        // execl("./process02_execl","arg1","arg2","arg3",NULL);
+        // execl("./process02_exec","arg1","arg2","arg3",NULL);
         char* args[] = {"arg1","arg2","arg3","arg4","arg5",NULL};
         execv("./process02_exec",args);
         printf("This line will not be printed.\n");
